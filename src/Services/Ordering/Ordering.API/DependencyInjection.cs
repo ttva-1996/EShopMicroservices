@@ -1,10 +1,12 @@
-﻿namespace Ordering.API;
+﻿using Carter;
+
+namespace Ordering.API;
 
 public static class DependencyInjection
 {
     public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
     {
-        //services.AddCarter();
+        services.AddCarter();
 
         //services.AddExceptionHandler<CustomExceptionHandler>();
         //services.AddHealthChecks()
@@ -15,7 +17,7 @@ public static class DependencyInjection
 
     public static WebApplication UseApiServices(this WebApplication app)
     {
-        //app.MapCarter();
+        app.MapCarter();
 
         //app.UseExceptionHandler(options => { });
         //app.UseHealthChecks("/health",
